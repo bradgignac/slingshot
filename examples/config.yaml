@@ -1,0 +1,7 @@
+mailgun:
+  user: api
+  key: mailgunapikey
+
+rackspace:
+  user: rackspaceusername
+  key: rackspaceapikey
