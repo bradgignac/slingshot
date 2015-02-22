@@ -2,6 +2,14 @@
 
 Slingshot is a command-line tool that allows you to easily write configuration values stored in formats like YAML and JSON as well as plain text to etcd.
 
+## Status
+
+This project is pretty much a hack and should not be considered production ready. For this tool to be production ready, it needs the following:
+
+- Tests.
+- Code that isn't awful.
+- Client library support.
+
 ## Installation
 
 To install Slingshot, you will need to have Go v1.3 or higher installed. Simply run:
