@@ -40,7 +40,7 @@ directories or files.
 Slingshot assumes etcd is available at `http://127.0.0.1:4001`. If you need specify an alternate etcd location, use the `--peer` flag to provide one or more URLs for nodes in your etcd cluster.
 
 ```
-$ slingshot push --peer http://10.10.10.1:4001 examples/config.json
+$ slingshot push --peer http://10.10.10.1:4001 examples
 ```
 
 For more information about Slingshot commands and their options, run `slingshot --help`.
