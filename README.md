@@ -22,7 +22,7 @@ The slingshot binary is now available in your `$GOPATH`. Once the first version 
 
 ## Usage
 
-This section describes the commands available in Slingshot. The config files used here are located in the `examples` directory at the root of the repository.
+This section describes the options and commands available in Slingshot. The config files used in the code samples are located in the `examples` directory at the root of the repository. For more information about Slingshot commands and their options, run `slingshot --help`.
 
 ### Push
 
@@ -35,15 +35,17 @@ $ slingshot push examples
 You can specify as many arguments to push as you'd like, and they can be either
 directories or files.
 
+### Global Options
+
+Slingshot provides several global options that can be specified with every command.
+
 #### Etcd Peers
 
 Slingshot assumes etcd is available at `http://127.0.0.1:4001`. If you need specify an alternate etcd location, use the `--peer` flag to provide one or more URLs for nodes in your etcd cluster.
 
 ```
-$ slingshot push --peer http://10.10.10.1:4001 examples
+$ slingshot --peer http://10.10.10.1:4001 push examples
 ```
-
-For more information about Slingshot commands and their options, run `slingshot --help`.
 
 ## License
 
