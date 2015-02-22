@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/codegangsta/cli"
 	"github.com/mailgun/go-etcd/etcd"
@@ -67,9 +68,10 @@ func push(c *cli.Context) {
 			os.Exit(1)
 		}
 
-		// TODO: Fix the key.
 		// TODO: Automatically detect key collisions.
-		_, err = client.Set(file, string(contents), 0)
+
+		key := strings.TrimSuffix(file, filepath.Ext(file))
+		_, err = client.Set(key, string(contents), 0)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
