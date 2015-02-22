@@ -18,24 +18,24 @@ This section describes the commands available in Slingshot. The config files use
 
 ### Writing Configuration
 
-The `push` command provides support for writing a config file to etcd.
+The `push` command provides support for writing config files to etcd.
 
 ```
-$ slingshot push examples/config.json
+$ slingshot push examples/config.json examples/config.yaml
 ```
 
 You can push an entire directory or glob of files as well.
 
 ```
-$ slingshot push examples
+$ slingshot push examples/**/*
 ```
 
 #### Changing Data Location
 
-By default, Slingshot uses the path and name of the config file to determine where to store configuration data. In the above examples, the configuration would be written to `/examples/config`. You can also change the location where data is written:
+By default, Slingshot uses the path and name of the config file to determine where to store configuration data. In the above examples, the configuration would be written to `/examples/config`. You can also change the location where data is written to in etcd:
 
 ```
-$ slingshot push examples/config.json custom/location
+$ slingshot push --directory custom/location examples/config.json
 ```
 
 #### Etcd Peers
@@ -43,20 +43,8 @@ $ slingshot push examples/config.json custom/location
 Slingshot assumes etcd is available at `http://127.0.0.1:4001`. If you need specify an alternate etcd location, use the `--peer` flag to provide one or more URLs for nodes in your etcd cluster.
 
 ```
-$ slingshot push examples/config.json \
-    --peer http://10.10.10.1:4001 \
-    --peer http://10.10.10.2:4001
+$ slingshot push --peer http://10.10.10.1:4001 examples/config.json
 ```
-
-### Reading Configuration
-
-You can grab configuration data back out of etcd easily.
-
-```
-$ slingshot show examples/config
-```
-
-As with the `push` command, you can print the configuration data in either YAML or JSON. Specify the `--format` flag to choose an output format.
 
 For more information about Slingshot commands and their options, run `slingshot --help`.
 
