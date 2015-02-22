@@ -24,7 +24,7 @@ The slingshot binary is now available in your `$GOPATH`. Once the first version 
 
 This section describes the commands available in Slingshot. The config files used here are located in the `examples` directory at the root of the repository.
 
-### Writing Configuration
+### Push
 
 The `push` command provides support for writing config files to etcd.
 
