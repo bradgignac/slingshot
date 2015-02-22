@@ -21,22 +21,11 @@ This section describes the commands available in Slingshot. The config files use
 The `push` command provides support for writing config files to etcd.
 
 ```
-$ slingshot push examples/config.json examples/config.yaml
+$ slingshot push examples
 ```
 
-You can push an entire directory or glob of files as well.
-
-```
-$ slingshot push examples/**/*
-```
-
-#### Changing Data Location
-
-By default, Slingshot uses the path and name of the config file to determine where to store configuration data. In the above examples, the configuration would be written to `/examples/config`. You can also change the location where data is written to in etcd:
-
-```
-$ slingshot push --directory custom/location examples/config.json
-```
+You can specify as many arguments to push as you'd like, and they can be either
+directories or files.
 
 #### Etcd Peers
 

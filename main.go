@@ -33,10 +33,6 @@ func main() {
 			Usage:  "Write configuration files to etcd",
 			Action: push,
 			Flags: []cli.Flag{
-				cli.StringFlag{
-					Name:  "directory, d",
-					Usage: "Directory where configuration should be uploaded",
-				},
 				cli.StringSliceFlag{
 					Name:  "peer, p",
 					Usage: "Etcd peers to connect to",
