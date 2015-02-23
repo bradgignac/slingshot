@@ -39,6 +39,16 @@ directories or files.
 
 Slingshot provides several global options that can be specified with every command.
 
+#### Key
+
+By default, all configuration files are written to the `_slingshot` directory. Config values are written to this directory to provide an isolated space where Slingshot can perform operations.
+
+If you'll be storing configuration for multiple projects in the same etcd cluster, you should override this option with a different key for each project. Use the `--key` flag to set a custom directory.
+
+```
+$ slingshot --key _myproject push examples
+```
+
 #### Etcd Peers
 
 Slingshot assumes etcd is available at `http://127.0.0.1:4001`. If you need specify an alternate etcd location, use the `--peer` flag to provide one or more URLs for nodes in your etcd cluster.

@@ -24,6 +24,11 @@ func main() {
 	app.Email = email
 
 	app.Flags = []cli.Flag{
+		cli.StringFlag{
+			Name:  "key, k",
+			Usage: "Key where configuration is stored",
+			Value: "slingshot",
+		},
 		cli.StringSliceFlag{
 			Name:  "peer, p",
 			Usage: "Etcd peers to connect to",
